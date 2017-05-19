@@ -117,5 +117,37 @@ ObjectIds are small, likely unique, fast to generate, and ordered. ObjectId valu
 - a 2-byte process id, and
 - a 3-byte counter, starting with a random value.
 
+# CRUD operations
+## Inserting
 
+`db.collectionName.insert(
+  {
+    field1: value1,
+    field2: value2,
+    field3: value3,
+    ...
+    fieldN: valueN
+  }
+  )`
+
+## Finding
+`db.collectionName.findOne()` - Finds one arbitrary document <br />
+`db.collectionName.find()` - Finds all documents <br />
+`db.collectionName.find({}, {name:true, _id:false})` - Shows only the names of the ships <br />
+`db.collectionName.findOne({'name':'USS Defiant'})` - Finds one document by attribute
+
+## Updating
+
+## Deleting
+
+### operators
+- **$gt / $gte** (greater than / greater than equals)  <br />`db.collectionName.find({class:{$gt:'P'}`
+- **$lt / $lte** (lesser than / lesser than equals ) <br/>
+`db.collectionName.find({class:{$lte:'P'}`
+- **$exists** (does an attribute exist or not) <br />
+`db.collectionName.find({type:{$exists:true}})`
+- **$regex** (Perl-style pattern matching ) <br />
+`db.collectionName.find({name:{$regex:'^USS\\sE'}})`
+- **$type** (search by type of an element) <br />
+`db.collectionName.find({name : {$type:2}})`
 
