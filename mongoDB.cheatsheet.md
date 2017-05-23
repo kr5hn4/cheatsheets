@@ -138,11 +138,13 @@ ObjectIds are small, likely unique, fast to generate, and ordered. ObjectId valu
 
 ## Updating
 `db.collectionName.update({name : 'USS Prometheus'}, {name : 'USS Something'})` -Replaces the whole document <br />
-`db.collectionName.update({name : 'USS Something'}, {$set : {operator : 'Starfleet', class : 'Prometheus'}})` -sets / changes certain attributes of a given document <br />
-`db.ships.update({name : 'USS Something'},{$unset : {operator : 1}})` -removes an attribute from a given document
+`db.collectionName.update({name : 'USS Something'}, {$set : {operator : 'Starfleet', class : 'Prometheus'}})` - Sets / changes certain attributes of a given document <br />
+`db.ships.update({name : 'USS Something'},{$unset : {operator : 1}})` - Removes an attribute from a given document
 
 
 ## Deleting
+`db.collectionName.remove({name : 'USS Prometheus'})` - Removes the document <br />
+`db.collectionName.remove({name:{$regex:’^USS\\sE’}})` - Removes using operator
 
 ### operators
 - **$gt / $gte** (greater than / greater than equals)  <br />`db.collectionName.find({class:{$gt:'P'}`
