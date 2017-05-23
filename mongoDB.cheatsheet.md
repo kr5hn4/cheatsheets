@@ -137,8 +137,8 @@ ObjectIds are small, likely unique, fast to generate, and ordered. ObjectId valu
 `db.collectionName.findOne({'name':'USS Defiant'})` - Finds one document by attribute
 
 ## Updating
-`db.collectionName.update({name : 'USS Prometheus'}, {name : 'USS Something'})` -Replaces the whole document
-`db.collectionName.update({name : 'USS Something'}, {$set : {operator : 'Starfleet', class : 'Prometheus'}})` -sets / changes certain attributes of a given document
+`db.collectionName.update({name : 'USS Prometheus'}, {name : 'USS Something'})` -Replaces the whole document <br />
+`db.collectionName.update({name : 'USS Something'}, {$set : {operator : 'Starfleet', class : 'Prometheus'}})` -sets / changes certain attributes of a given document <br />
 `db.ships.update({name : 'USS Something'},{$unset : {operator : 1}})` -removes an attribute from a given document
 
 
