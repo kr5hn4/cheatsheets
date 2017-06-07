@@ -141,7 +141,10 @@ ordered: If true, performs and ordered insert of the documents in the array, and
 
 ## Deleting
 
-### operators
+# operators
+
+## Comparison Operators
+
 - **$gt / $gte** (greater than / greater than equals)  <br />`db.collectionName.find({class:{$gt:'P'}`
 - **$lt / $lte** (lesser than / lesser than equals ) <br/>
 `db.collectionName.find({class:{$lte:'P'}`
