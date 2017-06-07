@@ -109,7 +109,7 @@ var mydoc = {
 
 In MongoDB, each document stored in a collection requires a unique \_id field that acts as a primary key. If an inserted document omits the \_id field, the MongoDB driver automatically generates an ObjectId for the \_id field.
 
-### ObjectId:
+### ObjectId
 ObjectIds are small, likely unique, fast to generate, and ordered. ObjectId values consists of 12-bytes, where the first four bytes are a timestamp that reflect the ObjectId’s creation, specifically:
 
 - a 4-byte value representing the seconds since the Unix epoch,
