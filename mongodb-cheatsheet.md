@@ -50,29 +50,29 @@ BSON is nothing, but just binary representation of JSON documents.
 
 BSON supports the following data types as values in documents. Each data type has a corresponding number and string alias that can be used with the $type operator to query documents by BSON type.
 
-|Type	              |Number	|Alias	Notes             |
-|-------------------|-------|-------------------------|
+|Type	              |Number	|Alias	Notes           |
+|-------------------|-------|---------------------------|
 |Double	            |1	    |“double”	                |
 |String	            |2	    |“string”	                |
 |Object	            |3	    |“object”	                |
 |Array	            |4	    |“array”	                |
-|Binary data	      |5	    |“binData”	              |
+|Binary data	    |5	    |“binData”	                |
 |Undefined	        |6	    |“undefined”	Deprecated. |
-|ObjectId	          |7	    |“objectId”              	|
-|Boolean	          |8	    |“bool”	                  |
-|Date	              |9	    |“date”	                  |
-|Null	              |10	    |“null”	                  |
+|ObjectId	        |7	    |“objectId”              	|
+|Boolean	        |8	    |“bool”	                    |
+|Date	            |9	    |“date”	                    |
+|Null	            |10	    |“null”	                    |
 |Regular Expression	|11	    |“regex”	                |
 |DBPointer	        |12	    |“dbPointer”	Deprecated. |
 |JavaScript	        |13	    |“javascript”           	|
 |Symbol	            |14	    |“symbol”	Deprecated.     |
-|JavaScript (with scope)|15	|“javascriptWithScope”	  |
-|32-bit integer	    |16	    |“int”	                  |
+|JavaScript (with scope)|15	|“javascriptWithScope”	    |
+|32-bit integer	    |16	    |“int”	                    |
 |Timestamp	        |17	    |“timestamp”	            |
-|64-bit integer	    |18	    |“long”	                  |
+|64-bit integer	    |18	    |“long”	                    |
 |Decimal128	        |19	    |“decimal”	New in version 3.4.|
-|Min key	          |-1	    |“minKey”	                |
-|Max key	          |127	  |“maxKey”	                |
+|Min key	        |-1     |“minKey”	                |
+|Max key	        |127    |“maxKey”	                |
 
 
 MongoDB documents are composed of field-and-value pairs and have the following structure:
@@ -120,7 +120,13 @@ ObjectIds are small, likely unique, fast to generate, and ordered. ObjectId valu
 # CRUD operations
 ## Inserting
 
-`db.collectionName.insert(
+`db.collectionName.insertOne(
+  {
+    field: value,
+  }
+  )`
+
+`db.collectionName.insertMany(
   {
     field1: value1,
     field2: value2,
