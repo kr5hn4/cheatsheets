@@ -113,7 +113,7 @@ In MongoDB, each document stored in a collection requires a unique \_id field th
 ObjectIds are small, likely unique, fast to generate, and ordered. ObjectId values consists of 12-bytes, where the first four bytes are a timestamp that reflect the ObjectId’s creation, specifically:
 
 - a 4-byte value representing the seconds since the Unix epoch,
-- a 3-byte machine identifier,
+- a 3-byte machine identifier(MAC address),
 - a 2-byte process id, and
 - a 3-byte counter, starting with a random value.
 
