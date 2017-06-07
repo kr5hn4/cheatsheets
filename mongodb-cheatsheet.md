@@ -117,7 +117,9 @@ ObjectIds are small, likely unique, fast to generate, and ordered. ObjectId valu
 - a 2-byte process id, and
 - a 3-byte counter, starting with a random value.
 
+
 # CRUD operations
+
 ## Inserting
 
 `db.collectionName.insertOne(
@@ -126,15 +128,30 @@ ObjectIds are small, likely unique, fast to generate, and ordered. ObjectId valu
   }
   )`
 
-`db.collectionName.insertMany(
+`db.collectionName.insertMany( [
   {
     field1: value1,
     field2: value2,
     field3: value3,
     ...
     fieldN: valueN
+  },
+  {
+    anotherField1: anotherValue1,
+    anotherField2: anotherValue2,
+    anotherField3: anotherValue3,
+    ...
+    anotherFieldN: anotherValueN
+  },
+  {
+    yetAnotherField1: yetAnotherValue1,
+    yetAnotherField2: yetAnotherValue2,
+    yetAnotherField3: yetAnotherValue3,
+    ...
+    yetAnotherFieldN: yetAnotherValueN,
+
   }
-  )`
+  ] )`
 
 ## Finding
 `db.collectionName.findOne()` - Finds one arbitrary document <br />
