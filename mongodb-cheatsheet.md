@@ -122,52 +122,24 @@ ObjectIds are small, likely unique, fast to generate, and ordered. ObjectId valu
 
 ## Inserting
 
-`db.collectionName.insertOne(
-  {
-    field: value,
-  }
-  )`
-
-`db.collectionName.insertMany( [
-  {
-    field1: value1,
-    field2: value2,
-    field3: value3,
-    ...
-    fieldN: valueN
-  },
-  {
-    anotherField1: anotherValue1,
-    anotherField2: anotherValue2,
-    anotherField3: anotherValue3,
-    ...
-    anotherFieldN: anotherValueN
-  },
-  {
-    yetAnotherField1: yetAnotherValue1,
-    yetAnotherField2: yetAnotherValue2,
-    yetAnotherField3: yetAnotherValue3,
-    ...
-    yetAnotherFieldN: yetAnotherValueN,
-
-  }
-  ] )`
+`db.collection.insert(
+   <document or array of documents>,
+   {
+     writeConcern: <document>,
+     ordered: <boolean>
+   }
+)`
+writeConcern: A document expressing the write concern. If omitted, the default one is used.
+ordered: If true, performs and ordered insert of the documents in the array, and if an error occurs with one of a document, MongoDB will return withot processing the remaining documents in the array.
 
 ## Finding
-`db.collectionName.findOne()` - Finds one arbitrary document <br />
-`db.collectionName.find()` - Finds all documents <br />
-`db.collectionName.find({}, {name:true, _id:false})` - Shows only the names of the ships <br />
-`db.collectionName.findOne({'name':'USS Defiant'})` - Finds one document by attribute
+
+`db.collection.find(query, projection)`
 
 ## Updating
-`db.collectionName.update({name : 'USS Prometheus'}, {name : 'USS Something'})` -Replaces the whole document <br />
-`db.collectionName.update({name : 'USS Something'}, {$set : {operator : 'Starfleet', class : 'Prometheus'}})` - Sets / changes certain attributes of a given document <br />
-`db.ships.update({name : 'USS Something'},{$unset : {operator : 1}})` - Removes an attribute from a given document
 
 
 ## Deleting
-`db.collectionName.remove({name : 'USS Prometheus'})` - Removes the document <br />
-`db.collectionName.remove({name:{$regex:’^USS\\sE’}})` - Removes using operator
 
 ### operators
 - **$gt / $gte** (greater than / greater than equals)  <br />`db.collectionName.find({class:{$gt:'P'}`
