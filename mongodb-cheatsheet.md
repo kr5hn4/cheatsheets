@@ -121,7 +121,6 @@ ObjectIds are small, likely unique, fast to generate, and ordered. ObjectId valu
 # CRUD operations
 
 ## Inserting
-
 `db.collection.insert(
    <document or array of documents>,
    {
@@ -133,14 +132,32 @@ writeConcern: A document expressing the write concern. If omitted, the default o
 ordered: If true, performs and ordered insert of the documents in the array, and if an error occurs with one of a document, MongoDB will return withot processing the remaining documents in the array.
 
 ## Finding
-
 `db.collection.find(query, projection)`
 
 ## Updating
+`db.collection.updateOne(
+   <filter>,
+   <update>,
+   {
+     upsert: <boolean>,
+     writeConcern: <document>,
+     collation: <document>
+   }
+)`
 
+`db.collection.updateMany(
+   <filter>,
+   <update>,
+   {
+     upsert: <boolean>,
+     writeConcern: <document>,
+     collation: <document>
+   }
+)`
 
 ## Deleting
 
+-----------------------------------------------------------------------------
 # operators
 
 ## Comparison Operators
